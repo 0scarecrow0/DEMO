@@ -1,0 +1,58 @@
+#loadingBox{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #2d3436;
+  opacity: .6;
+  border-radius: 5px;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.left{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-140px);
+  background: RGB(227,42,55);
+  border-radius: 50%;
+  animation: Moveright 1.5s infinite;
+}
+@keyframes Moveright{
+  to{
+    left:50%;
+    transform: translateX(-220px);
+  }
+}
+.center{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-180px);
+  background: RGB(76,76,76);
+  border-radius: 50%;
+}
+.right{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-220px);
+  background: rgb(43,113,248);
+  border-radius: 50%;
+  animation: Moveleft 1.5s infinite;
+}
+@keyframes Moveleft{
+  to{
+    left:50%;
+    transform: translateX(-140px);
+  }
+}
