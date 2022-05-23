@@ -2,10 +2,22 @@
  * @Author: scarecrow scarecrow.wilderness@gmail.com
  * @Date: 2022-05-18 21:56:02
  * @LastEditors: scarecrow scarecrow.wilderness@gmail.com
- * @LastEditTime: 2022-05-20 16:07:06
+ * @LastEditTime: 2022-05-23 21:43:26
  * @FilePath: /demo/video-demo/js/main.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
+if (Hls.isSupported()) {
+  let video = document.getElementById('video');
+  let hls = new Hls();
+  hls.attachMedia(video);
+  /** 是否就绪 */
+  hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+    hls.loadSource('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');
+  });
+}
+
+
+
 const myVideo = document.getElementById('video');
 const myProgress = document.getElementById('seek');
 const fic = new FicList(50)
@@ -41,11 +53,11 @@ let bulletChatArrCopy = []; // copy弹幕数据，用于展示列表
 /** 视频总时长 */
 let videoDuration = 0
 /** 分段长度 单位秒（s） */
-let subLength = 30
+let subLength = 90
 /** 分段记录，记录每个分段 的请求详情 */
 let subList=[]
 /** 后端返回弹幕时间  必须在这个时间范围内返回*/
-let responseTime = 10
+let responseTime = 20
 /** 记录上次播放时间 用于判断前进后退 */
 let videoCurrentTime = 0;
 /** 用于渲染弹幕 */
