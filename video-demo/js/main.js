@@ -2,7 +2,7 @@
  * @Author: scarecrow scarecrow.wilderness@gmail.com
  * @Date: 2022-05-18 21:56:02
  * @LastEditors: scarecrow scarecrow.wilderness@gmail.com
- * @LastEditTime: 2022-05-23 21:43:26
+ * @LastEditTime: 2022-05-28 21:14:01
  * @FilePath: /demo/video-demo/js/main.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -14,6 +14,7 @@ if (Hls.isSupported()) {
   hls.on(Hls.Events.MEDIA_ATTACHED, function () {
     hls.loadSource('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');
   });
+
 }
 
 
